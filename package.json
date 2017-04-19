@@ -1,0 +1,15 @@
+{
+  "name": "pinster",
+  "version": "1.0.0",
+  "description": "Pinboard Chrome extension",
+  "main": "background.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chrome": "0.0.46"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rik Hemsley",
+  "license": "ISC"
+}

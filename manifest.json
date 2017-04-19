@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "pinster",
+  "description": "pinboard.in support",
+  "version": "1.0",
+
+  "background":
+  {
+    "scripts": ["popup.js"],
+    "persistent": false
+  },
+  "permissions": [
+   "activeTab",
+   "https://api.pinboard.in/"
+   ],
+
+   "commands": {
+     "pin-bookmark": {
+       "suggested_key": { "default": "Ctrl+M" },
+       "description": "Pinboard Bookmark"
+     }
+   },
+
+  "content_security_policy": "script-src 'self' https://rikkus.info; object-src 'self'"
+}
