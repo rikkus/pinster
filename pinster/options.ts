@@ -1,7 +1,7 @@
 function save_options() {
 
     chrome.storage.sync.set({
-        "apiToken": document.getElementById("api-token").value.trim()
+        "apiToken": (<HTMLInputElement>document.getElementById("api-token")).value.trim()
     }, function () {
         var statusElement = document.getElementById('status');
         statusElement.textContent = 'Saved';
@@ -17,7 +17,7 @@ function load_options() {
         "apiToken": ''
     }, function (items) {
         if (chrome.runtime.lastError === undefined) {
-            document.getElementById('api-token').value = items.apiToken;
+            (<HTMLInputElement>document.getElementById('api-token')).value = items.apiToken;
         }
     });
 }

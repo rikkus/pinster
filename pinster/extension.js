@@ -40,12 +40,15 @@ function notify(id, title, message) {
     });
 }
 function build_url(url, params) {
-    return (params.length == 0) ? url :
-        url + '?' + Object.entries(params).map(a => a[0] + '=' + encodeURI(a[1])).join('&');
+    let q = [];
+    for (let key of Object.keys(params)) {
+        q.push(key + "=" + encodeURI(url[key]));
+    }
+    return (params.length == 0) ? url : (url + '?' + q.join('&'));
 }
 function add_url(apiToken, url, title, later) {
     return build_url(ADD_URL, {
-        auth_token: encodeURI(apiToken),
+        auth_token: apiToken,
         url: url,
         description: title,
         toread: later ? "yes" : "no"
